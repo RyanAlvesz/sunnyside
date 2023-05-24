@@ -47,6 +47,10 @@ header .logo {
     font-weight: 700;
 }
 
+header .nav-menu{
+    display: none;
+}
+
 header h1 {
     font-family: var(--title-font);
     font-size: 2.5rem;
@@ -205,7 +209,8 @@ header h1 {
     height: auto;
 }
 
-.images img{
+picture img{
+    height: 100%;
     width: 100%;
 } 
 
@@ -251,4 +256,132 @@ footer .logo{
     width: 1.4rem;
 }
 
+@media (min-width: 1024px){
+    
+    header {
+        height: 100vh;
+        background-image: url(./images/desktop/image-header.jpg);
+        padding: 32px 42px;
+    }
+    
+    header .logo {
+        font-size: 2.5rem;
+    }
+    
+    header h1 {
+        font-family: var(--title-font);
+        font-size: 4rem;
+        text-transform: uppercase;
+        font-weight: 900;
+        letter-spacing: .5rem;
+    }
+    
+    header .menu{
+        display: none;
+    }
 
+    header .nav-menu{
+        display: flex;
+        align-items: center;
+        gap: 48px;
+        font-style: var(--text-font);
+        font-size: 1.2rem;
+    }
+
+    .contact{
+        font-family: var(--title-font);
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--white);
+        height: 50px;
+        width: 125px;
+        border-radius: 24px;
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .info{
+        display: grid;
+        grid-template-areas: 
+        "pt2 pt2"
+        "pt3 pt4"
+        "pt5 pt6";
+    }
+
+    .info:nth-child(1){
+        grid-area: pt1;
+    }
+    .info:nth-child(2){
+        grid-area: pt2;
+    }
+    .info:nth-child(3){
+        grid-area: pt3;
+    }
+    .info:nth-child(4){
+        grid-area: pt4;
+    }
+    .info:nth-child(5){
+        grid-area: pt5;
+    }
+    .info:nth-child(6){
+        grid-area: pt6;
+    }
+
+    .container.graphic{
+        background-image: url(./images/desktop/image-graphic-design.jpg);
+    }
+
+    .container.photography{
+        background-image: url(./images/desktop/image-photography.jpg);
+    }
+
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .container .description{
+        width: 72%;
+        height: 100%;
+    }
+
+    .testimonials{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .testimonials-title{
+        font-size: 1.2rem;
+        width: 100%;
+        padding: 32px 0;
+    }
+  
+    .client{
+        width: 400px;
+        height: auto;
+    }  
+
+    .images{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    
+    picture img{
+        height: 100%;
+        width: 100%;
+    } 
+    
+    footer{
+        gap: 128px;
+    }
+    
+
+    
+}
