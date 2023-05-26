@@ -11,6 +11,7 @@
     --yellow: #fad400;
     --gray: #a7abae;
     --white: #ffffff;
+    --white2: rgba(255,255,255, 0.3);
     --graphic-text: #25564b;
     --photography-text: #19536b;
     --footer: #1f6656;
@@ -97,13 +98,14 @@ header h1 {
 
 .line {
     height: 12px;
-    width: 110%;
+    width: 112%;
     position: absolute;
-    left: -5%;
+    left: -6%;
     bottom: -12%;
     z-index: -1;
     opacity: .3;
     border-radius: 10px;
+    
 }
 
 .line-yellow {
@@ -112,6 +114,18 @@ header h1 {
 
 .line-red {
     background-color: var(--red);
+}
+
+.description__link:hover{
+    cursor: pointer;
+}
+
+.description__link:hover .line-yellow{
+    opacity: 1;
+}
+
+.description__link:hover .line-red{
+    opacity: 1;
 }
 
 .container{
@@ -128,12 +142,13 @@ header h1 {
 }
 
 .container .description{
-    height: 106%;
+    height: 108%;
     display: flex;
     gap: 22px;
     flex-direction: column;
     justify-content: flex-end;
 }
+
 
 .graphic *{
     color: var(--graphic-text);
@@ -148,7 +163,10 @@ header h1 {
     font-size: 1rem;
     color: var(--gray);
     text-align: center;
-    padding: 32px 0;
+    height: 12vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
     letter-spacing: .2rem;
 }
 
@@ -247,13 +265,22 @@ footer .logo{
     opacity: .7;
 }
 
+.options p:hover{
+    color: var(--white);
+    cursor: pointer;
+}
+
 .social{
     display: flex;
     gap: 32px;
 }
 
-.social img{
-    width: 1.4rem;
+svg:hover path{
+    fill: var(--white);
+}
+
+svg:hover{
+    cursor: pointer;
 }
 
 @media (min-width: 1024px){
@@ -303,31 +330,73 @@ footer .logo{
         text-transform: uppercase;
     }
 
-    .info{
-        display: grid;
-        grid-template-areas: 
-        "pt2 pt2"
-        "pt3 pt4"
-        "pt5 pt6";
+    .contact:hover{
+        background-color: var(--white2);
+        cursor: pointer;
     }
 
-    .info:nth-child(1){
-        grid-area: pt1;
+    .contact:hover p{
+        color: var(--white);
     }
-    .info:nth-child(2){
-        grid-area: pt2;
+
+    .info{
+        display: grid;
+        grid-column: 1fr 1fr 1fr;
     }
-    .info:nth-child(3){
-        grid-area: pt3;
+
+    .description {
+        width: 50vw; 
     }
-    .info:nth-child(4){
-        grid-area: pt4;
+
+    .transform img{
+        width: 50vw;
     }
-    .info:nth-child(5){
-        grid-area: pt5;
+
+    .transform{
+        display: flex;
+        height: 70vh;
+        flex-direction: row-reverse;
     }
-    .info:nth-child(6){
-        grid-area: pt6;
+
+    .stand{
+        display: flex;
+        height: 70vh;
+    }
+
+    .stand img{
+        width: 50vw;
+    }
+
+    .description {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        gap: 12px;
+        padding: 180px 0px 180px 150px;
+        place-items: start;
+        height: auto;
+    }
+    
+    .description__title {
+        font-size: 2.2rem;
+        text-align: start;
+        width: 300px;
+    }
+    
+    .description__text {
+        padding: 0px;
+        text-align: start;
+        place-self: center start;
+        width: 84%;
+    }
+    
+    .description__link {
+        font-size: 1.2rem;
+    }
+
+    .pictures{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 70vh;
     }
 
     .container.graphic{
@@ -342,31 +411,55 @@ footer .logo{
         display: flex;
         justify-content: center;
         align-items: flex-end;
+        height: auto;
     }
 
     .container .description{
-        width: 72%;
-        height: 100%;
+        gap: 24px;
+        padding: 0px;
+        height: 40%;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .description__title__pictures{
+        text-align: center;
+    }
+
+    .description__text__pictures{
+        width: 55%;
+        text-align: center;
     }
 
     .testimonials{
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        align-content: center;
-        flex-direction: row;
-        flex-wrap: wrap;
+        height: 100vh;
+        gap: 64px;
+    }
+
+    .testimonials-title{
+        height: auto;
+        font-size: 1.6rem;
     }
     
-    .testimonials-title{
-        font-size: 1.2rem;
-        width: 100%;
-        padding: 32px 0;
+    .clients{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        height: 50%;
+        align-content: center;
+        justify-items: center;
     }
-  
+
     .client{
-        width: 400px;
-        height: auto;
+        height: 500px;
+        width: 86%;
     }  
+
+    .client__name{
+        font-size: 1.2rem;
+    }
 
     .images{
         display: grid;
@@ -377,11 +470,18 @@ footer .logo{
         height: 100%;
         width: 100%;
     } 
-    
-    footer{
-        gap: 128px;
-    }
-    
 
-    
+    footer{
+        height: 40vh;
+        gap: 64px;
+    }
+
+    footer .logo{
+        font-size: 2.6rem;
+    }
+
+    .options{
+        font-size: 1.6rem;
+    }
+
 }
