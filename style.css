@@ -1,8 +1,12 @@
+/* RESET DE PÁGINA */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* DEFINIÇÃO DE VARIÁVEIS */
 
 :root {
     --text-font: 'Barlow', sans-serifs;
@@ -19,10 +23,14 @@
     --footer-bg: #90d4c5;
 }
 
+/* DEFINIÇÃO DE FONTE E COR DE FUNDO PARA TODO O SITE */
+
 body {
     font-family: var(--text-font);
     background-color: var(--background);
 }
+
+/* AJUSTES DO HEADER */
 
 header {
     height: 80vh;
@@ -59,6 +67,8 @@ header h1 {
     font-weight: 900;
     letter-spacing: .5rem;
 }
+
+/* AJUSTES DA SEÇÃO PRINCIPAL (INFO) */
 
 .info img {
     width: 100%;
@@ -129,8 +139,10 @@ header h1 {
 }
 
 .container{
+    display: flex;
     height: 600px;
     background-size: cover;
+    align-items: flex-end;
 }
 
 .container.graphic{
@@ -142,13 +154,11 @@ header h1 {
 }
 
 .container .description{
-    height: 108%;
+    height: auto;
     display: flex;
     gap: 22px;
     flex-direction: column;
-    justify-content: flex-end;
 }
-
 
 .graphic *{
     color: var(--graphic-text);
@@ -157,6 +167,8 @@ header h1 {
 .photography *{
     color: var(--photography-text);
 }
+
+/* AJUSTES DA ÁREA DE DEPOIMENTOS */
 
 .testimonials-title{
     font-family: var(--title-font);
@@ -232,11 +244,13 @@ picture img{
     width: 100%;
 } 
 
+/* AJUSTES DO FOOTER */
+
 footer{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 80px;
+    gap: 4rem;
     color: var(--footer);
     height: 50vh;
     background-color: var(--footer-bg);
@@ -261,7 +275,7 @@ footer .logo{
     font-family: var(--text-font);
     font-weight: 600;
     font-size: 1.2rem;
-    gap: 42px;
+    gap: 2.5rem;
     opacity: .7;
 }
 
@@ -272,7 +286,7 @@ footer .logo{
 
 .social{
     display: flex;
-    gap: 32px;
+    gap: 2rem;
 }
 
 svg:hover path{
@@ -283,8 +297,19 @@ svg:hover{
     cursor: pointer;
 }
 
+svg {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+
+/* RESPONSIVIDADE PARA COMPUTADOR */
+
+
 @media (min-width: 1024px){
-    
+
+    /* AJUSTES DO HEADER */
+
     header {
         height: 100vh;
         background-image: url(./images/desktop/image-header.jpg);
@@ -328,6 +353,7 @@ svg:hover{
         font-size: 1rem;
         font-weight: 600;
         text-transform: uppercase;
+        transition: .2s;
     }
 
     .contact:hover{
@@ -339,41 +365,30 @@ svg:hover{
         color: var(--white);
     }
 
+    /* AJUSTES DA SEÇÃO DE INFORMAÇÕES */
+
     .info{
         display: grid;
-        grid-column: 1fr 1fr 1fr;
+        grid-template-rows: auto;
     }
 
-    .description {
-        width: 50vw; 
+    .transform, .stand{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 
-    .transform img{
-        width: 50vw;
-    }
-
-    .transform{
-        display: flex;
-        height: 70vh;
-        flex-direction: row-reverse;
-    }
-
-    .stand{
-        display: flex;
-        height: 70vh;
-    }
-
-    .stand img{
-        width: 50vw;
+    .transform > .description{
+        order: -1;
     }
 
     .description {
         display: grid;
         grid-template-rows: auto 1fr auto;
-        gap: 12px;
-        padding: 180px 0px 180px 150px;
+        gap: 2rem;
+        padding-left: 8rem;
         place-items: start;
-        height: auto;
+        height: initial;
+        place-self: center;
     }
     
     .description__title {
@@ -386,7 +401,7 @@ svg:hover{
         padding: 0px;
         text-align: start;
         place-self: center start;
-        width: 84%;
+        width: 90%;
     }
     
     .description__link {
@@ -396,7 +411,7 @@ svg:hover{
     .pictures{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        height: 70vh;
+        height: 80vh;
     }
 
     .container.graphic{
@@ -410,16 +425,17 @@ svg:hover{
     .container{
         display: flex;
         justify-content: center;
-        align-items: flex-end;
         height: auto;
+        background-position: center;
     }
 
     .container .description{
-        gap: 24px;
+        gap: 1rem;
         padding: 0px;
         height: 40%;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
+        place-self: flex-end;
     }
     
     .description__title__pictures{
@@ -430,6 +446,8 @@ svg:hover{
         width: 55%;
         text-align: center;
     }
+
+    /* AJUSTES DA SEÇÃO DE DEPOIMENTOS */
 
     .testimonials{
         display: flex;
@@ -471,17 +489,18 @@ svg:hover{
         width: 100%;
     } 
 
+    /* AJUSTES DO FOOTER */
+
     footer{
         height: 40vh;
         gap: 64px;
     }
 
     footer .logo{
-        font-size: 2.6rem;
+        font-size: 2.4rem;
     }
 
     .options{
-        font-size: 1.6rem;
+        font-size: 1.2rem;
     }
-
 }
